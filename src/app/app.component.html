@@ -1,12 +1,43 @@
-<div class="d-flex flex-column align-items-center mt-5">
-  <div class="card card-body">
-    <h1>{{title}}</h1>
-    <form>
-      Numero 1: <input class="form-control mt-1" name="numero1" type="number" [(ngModel)]="numero1"> 
-      Numero 2: <input class="form-control mt-1" name="numero2" type="number" [(ngModel)]="numero2"> 
-      <input class="btn btn-primary m-3" type="submit" value="Sumar" (click)="sumar()" />
-      <input class="btn btn-success m-3" type="submit" value="Restar" (click)="restar()" />
-    </form>
-    <h3>Resultado: {{resultado}}</h3>
-  </div>
-</div>
+<style>
+  .cont{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  form>*{
+    margin: 5px;
+  }
+  .margin{
+    margin: 3vh;
+  }
+</style>
+<mat-card class="margin">
+  <mat-card-content>
+    <div class="cont">
+      <div class="card card-body">
+        <h1 style="color: white;">{{title}}</h1>
+        <form>
+          <mat-form-field class="example-full-width">
+            <mat-label>Numero 1</mat-label>
+            <input matInput placeholder="Ingresa el numero 1" name="numero1" type="number" [(ngModel)]="numero1">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Numero 2</mat-label>
+            <input matInput placeholder="Ingresa el numero 2" name="numero2" type="number" [(ngModel)]="numero2">
+          </mat-form-field>
+          <div>
+            <button mat-raised-button color="primary" style="margin-right: 10px;"  (click)="sumar()" >Sumar</button>
+            <button mat-raised-button color="accent"  (click)="restar()">Restar</button>
+          </div>
+        </form>
+        <h3 style="color: white;">Resultado: {{resultado}}</h3>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
