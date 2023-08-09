@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'MiniCalculadoraApp';
+  title = 'Mini Calculadora';
+  
+  protected numero1:number = 0;
+  protected numero2:number = 0;
+  protected resultado:number = 0;
 }
